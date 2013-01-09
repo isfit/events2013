@@ -12,7 +12,9 @@ class Admin::EventsController < ApplicationController
   end
 
   def create
-    @event =Event.new(params[:event])
+    @event = Event.new(params[:event])
+    @event.deleted = false
+    @event.weight = Event.order("weight DESC").first.weight + 1
     if @event.save
       redirect_to admin_event_path(@event), notice: "Event was successfully created."
     else
