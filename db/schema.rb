@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130109122653) do
+ActiveRecord::Schema.define(:version => 20130109143414) do
 
   create_table "event_dates", :force => true do |t|
     t.datetime "datetime"
@@ -49,20 +49,25 @@ ActiveRecord::Schema.define(:version => 20130109122653) do
     t.datetime "publish_at"
     t.integer  "event_place_id"
     t.text     "sidebar"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "events", ["event_place_id"], :name => "index_events_on_event_place_id"
   add_index "events", ["event_type_id"], :name => "index_events_on_event_type_id"
 
-  create_table "groups", :force => true do |t|
+  create_table "groups", :id => false, :force => true do |t|
+    t.integer "id",                             :default => 0, :null => false
     t.string  "name_en"
     t.string  "name_no"
     t.integer "section_id"
     t.integer "festival_id"
     t.string  "email",          :limit => 1000
-    t.string  "tag",                            :null => false
+    t.string  "tag",                                           :null => false
     t.text    "description_en"
     t.text    "description_no"
   end
@@ -72,7 +77,8 @@ ActiveRecord::Schema.define(:version => 20130109122653) do
     t.integer "position_id"
   end
 
-  create_table "positions", :force => true do |t|
+  create_table "positions", :id => false, :force => true do |t|
+    t.integer  "id",             :default => 0, :null => false
     t.string   "title_en"
     t.string   "title_no"
     t.integer  "user_id"

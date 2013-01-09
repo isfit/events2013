@@ -9,6 +9,7 @@ Events::Application.routes.draw do
         get :weight_move
       end
     end
+    resources :event_dates
   end
 
   match 'login' => 'sessions#new'
