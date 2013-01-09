@@ -4,7 +4,11 @@ Events::Application.routes.draw do
 
   resources :sessions
   namespace :admin do
-    resources :events
+    resources :events do
+      member do
+        get :weight_move
+      end
+    end
   end
 
   match 'login' => 'sessions#new'
