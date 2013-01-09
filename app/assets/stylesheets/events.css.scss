@@ -1,3 +1,82 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+article.event {
+  max-width: 720px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+div.meta {
+  background: #0481B9;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  color: white;
+  position: absolute;
+  bottom: -3em;
+  margin-bottom: -4em;
+  left: -3em;
+  padding-left: 1em;
+  padding-top: 2em;
+  text-align: center;
+}
+
+div.meta p {
+  margin: 0;
+}
+
+div.meta div {
+  margin: .5em 0;
+}
+
+h1.name {
+  position: absolute;
+  bottom: .2em;
+  margin: 0;
+  right: 0;
+  padding: 0.2em 1.2em;
+  background: black;
+  color: white;
+  text-transform: uppercase;
+  font-family: Helvetica Neue, Helvetica,"apertura", sans-serif;
+}
+
+table.price {
+  margin-left: 3em;
+  text-align: left;
+}
+
+span.date {
+  display: block;
+  width: 100%;
+  text-align: center;
+  height: 80%;
+  font-size: 11em;
+  line-height: 1em;
+}
+span.month {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 4em;
+}
+article.dateblock {
+  background: white;
+  margin-right: -20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 200px;
+  position: fixed;
+}
+
+
+@media (max-width: 767px) {
+  article.event {
+    width: 100%;
+    max-width: none;
+  }
+}
