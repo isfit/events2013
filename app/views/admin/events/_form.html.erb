@@ -1,0 +1,20 @@
+<div class="span12">
+<%= simple_form_for(@event, url: admin_events_path) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title, :input_html => {class: "span6"} %>
+    <%= f.input :event_type_id, collection: @event_types, as: :select %>
+    <%= f.input :event_place_id, collection: @event_places, as: :select %>
+    <%= f.input :price_member, :input_html => {class: "span6"}, hint: "Price for members of Samfundet (if applicable)." %>
+    <%= f.input :price_other, :input_html => {class: "span6"}, hint: "Price for all others." %>
+    <%= f.input :body, :input_html => {class: "span6"} %>
+    <%= f.input :sidebar, :input_html => {class: "span6"} %>
+    <%= f.input :publish_at, :input_html => {class: "span2"}, hint: "Time is in UTC (GMT +0). Norway is in UTC+1, so remember that." %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+</div>

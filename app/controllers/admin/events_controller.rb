@@ -12,9 +12,18 @@ class Admin::EventsController < ApplicationController
   end
 
   def create
+    @event =Event.new(params[:event])
+    if @event.save
+      redirect_to admin_event_path(@event), notice: "Event was successfully created."
+    else
+      render action: "new"
+    end
   end
 
   def new
+    @event = Event.new
+    @event_types = EventType.all
+    @event_places = EventPlace.all
   end
 
   def destroy

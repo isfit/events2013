@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
   belongs_to :event_type
   belongs_to :event_place
-  attr_accessible :body, :deleted, :price_member, :price_other, :publish_at, :sidebar, :title, :weight
+  attr_accessible :body, :price_member, :price_other, :publish_at, :sidebar, :title, :event_type_id, :event_place_id
+
+
 end
