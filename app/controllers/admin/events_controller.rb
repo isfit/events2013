@@ -9,6 +9,9 @@ class Admin::EventsController < ApplicationController
   end
 
   def update
+    @event = Event.find(params[:id])
+    @event_types = EventType.all
+    @event_places = EventPlace.all
   end
 
   def create
