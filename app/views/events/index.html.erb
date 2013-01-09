@@ -1,6 +1,37 @@
 <div class="span12">
 
 <div class="row" id="eventwell">
+  <div class="datewrapper row" id="07feb">
+    <article class="dateblock span2 offset1">
+      <span class="date">xx</span><span class="month">test</span>
+    </article>
+
+    <% @events.each do |event| %>
+      <article class="span8 event offset3" style="background:url(http://i.imgur.com/MVbvb.png)">
+        <h1 class="name"><%= event.title %></h1>
+    
+        <div class="meta">
+          <div class="location">
+            <p><%= event.event_place.name %></p>
+            <!-- TODO! -->
+            <p><%= event.event_dates[0].datetime.strftime('%H:%M') %></p>
+          </div>
+    
+          <table class="price">
+              <tr>
+                <td>Medl.</td>
+                <td><%= event.price_member %>,-</td>
+              </tr>
+              <tr>
+                <td>Ikke medl.</td>
+                <td><%= event.price_other %>,-</td>
+              </tr>
+            </table>
+        </div>
+      </article>
+    <% end %>
+
+  </div>
   
   <div class="datewrapper row" id="10feb">
     <article class="dateblock span2 offset1">
