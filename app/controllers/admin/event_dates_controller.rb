@@ -27,6 +27,7 @@ class Admin::EventDatesController < ApplicationController
     if @event.save
       redirect_to admin_event_path(@event.event)
     else
+      @events = Event.where(:deleted => false)
       render action: "edit"
     end
   end
