@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by_username(params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to_target_or_default root_url, :notice => "Logged in successfully."
+      redirect_to admin_events_url, :notice => "Logged in successfully."
     elsif user
       flash.now[:error] = "Not authorized to login."
       render :action => 'new'
