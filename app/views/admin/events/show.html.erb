@@ -1,2 +1,39 @@
-<h1>Admin::Events#show</h1>
-<p>Find me in app/views/admin/events/show.html.erb</p>
+<h1><%= @event.title %></h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Datetime</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+    </tr>
+  </thead>
+
+  <% @event_dates.each do |date| %>
+    <tr>
+      <td><%= link_to @event.title, date.url %></td>
+      <td><%= date.datetime %></td>
+      <td><%= link_to 'Edit', edit_admin_event_event_date_path(@event, date), class: "btn btn-primary" %></td>
+      <td><%= link_to 'Destroy', admin_event_event_date_path(@event, date), confirm: 'Are you sure?', method: :delete, class: "btn btn-danger" %>
+    </tr>
+  <% end %>
+
+</table>
+
+<div class="span12">
+  <%= simple_form_for(@new_event_date, url: admin_event_event_dates_path(params[:id])) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :datetime, :input_html => {class: "span2"} %>
+      <%= f.input :url, :input_html => { class: "span6" } %>
+      <%= f.input :sold_out, as: :boolean, :input_html => { class: "span6" } %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+
+  <% end %>
+</div>

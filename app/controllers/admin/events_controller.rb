@@ -28,6 +28,9 @@ class Admin::EventsController < ApplicationController
   end
 
   def show
+    @event = Event.find(params[:id])
+    @event_dates = Event.find(params[:id]).event_dates
+    @new_event_date = EventDate.new
   end
 
   def edit

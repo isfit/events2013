@@ -1,8 +1,10 @@
 class Admin::EventDatesController < ApplicationController
   def create
+    @e = Event.find(params[:id])
     @event = EventDate.new(params[:event_date])
+    @event.event = @e
     if @event.save
-      redirect_to admin_events_path
+      redirect_to admin_event_path(@e)
     else
       render action: "new"
     end
@@ -22,6 +24,8 @@ class Admin::EventDatesController < ApplicationController
   end
 
   def destroy
-    
+    @event = EventDate.find(params[:id])
+    @event.destroy
+    redirect_to admin_event_path
   end
 end
