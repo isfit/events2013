@@ -1,6 +1,6 @@
 class Admin::EventDatesController < ApplicationController
   def create
-    @e = Event.find(params[:id])
+    @e = Event.find(params[:event_id])
     @event = EventDate.new(params[:event_date])
     @event.event = @e
     if @event.save
@@ -21,6 +21,7 @@ class Admin::EventDatesController < ApplicationController
 
   def update
     @event = EventDate.find(params[:id])
+
   end
 
   def destroy
