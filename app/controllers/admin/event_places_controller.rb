@@ -1,4 +1,5 @@
 class Admin::EventPlacesController < ApplicationController
+  layout 'admin'
   def new
     @event_place = EventPlace.new
   end

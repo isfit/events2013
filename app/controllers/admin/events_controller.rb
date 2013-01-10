@@ -1,4 +1,5 @@
 class Admin::EventsController < ApplicationController
+  layout 'admin'
   def index
     @events = Event.where(:deleted => false).order("weight DESC")
   end
