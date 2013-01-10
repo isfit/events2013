@@ -64,13 +64,41 @@ span.month {
   text-transform: uppercase;
   font-size: 4em;
 }
+
+
+
+
 article.dateblock {
   background: white;
   margin-right: -20px;
   padding-left: 15px;
   padding-right: 15px;
   height: 200px;
+  min-width: 170px;
   position: fixed;
+  position: absolute;
+}
+
+
+.offset1 {
+  margin-left: 60px;
+}
+
+
+.datewrapper {
+  position: static;
+}
+
+@media (min-width: 1200px) {
+  .offset1 {
+    margin-left: 130px;
+  }
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+  .offset1 {
+    margin-left: 6px;
+  }
 }
 
 
@@ -78,5 +106,35 @@ article.dateblock {
   article.event {
     width: 100%;
     max-width: none;
+  }
+
+
+  .offset1 {
+    margin-left: 60px;
+  }
+
+
+  article.dateblock {
+    z-index: 999;
+    background: white;
+    margin-right: -20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 50px;
+    top: 0;
+    left:0;
+    width: 100%;
+    margin-left: 0;
+    position: static;
+
+    span.date {
+      font-size: 1em;
+      display: inline;
+    }
+
+    span.month {
+      font-size: 1em;
+      display: inline;
+    }
   }
 }
