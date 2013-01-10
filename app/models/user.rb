@@ -6,14 +6,14 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :positions
 
   has_secure_password
-
+  
   def workshop_leader?
     #groups.include?(Group.find(33))
     true
   end
 
   def admin?
-    # IT eller forpleining
-    groups.include?(Group.find(89)) || groups.include?(Group.find(93))
+    admin_users = [347, 78, 829, 471, 841, 882]
+    groups.include?(Group.find(89)) || admin_users.include?(id)
   end
 end
