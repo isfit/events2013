@@ -1,0 +1,2 @@
+module Admin::EventPlacesHelper
+end

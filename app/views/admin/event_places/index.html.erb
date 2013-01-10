@@ -1,0 +1,22 @@
+<h1>Event Places</h1>
+
+<div class="pull-right">
+  <%= link_to 'New Place', new_admin_event_place_path, class: "btn btn-primary" %>
+</div>
+<table class="table table-bordered table-striped">
+
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+
+  <% @event_places.each do |place| %>
+    <tr>
+      <td><%= place.name %></td>
+      <td><%= link_to 'Edit', edit_admin_event_place_path(place), class: "btn btn-primary" %>
+    </tr>
+  <% end %>
+
+</table>
