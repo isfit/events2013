@@ -1,39 +1,70 @@
 <h1><%= @event.title %></h1>
 
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Event</th>
-      <th>Datetime</th>
-      <th>Edit</th>
-      <th>Destroy</th>
-    </tr>
-  </thead>
-
-  <% @event_dates.each do |date| %>
-    <tr>
-      <td><%= link_to @event.title, date.url %></td>
-      <td><%= date.datetime %></td>
-      <td><%= link_to 'Edit', edit_admin_event_event_date_path(@event, date), class: "btn btn-primary" %></td>
-      <td><%= link_to 'Destroy', admin_event_event_date_path(@event, date), confirm: 'Are you sure?', method: :delete, class: "btn btn-danger" %>
-    </tr>
-  <% end %>
-
-</table>
-
-<div class="span12">
-  <%= simple_form_for(@new_event_date, url: admin_event_event_dates_path(params[:id])) do |f| %>
-    <%= f.error_notification %>
-
-    <div class="form-inputs">
-      <%= f.input :datetime, :input_html => {class: "span2"} %>
-      <%= f.input :url, :input_html => { class: "span6" } %>
-      <%= f.input :sold_out, as: :boolean, :input_html => { class: "span6" } %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit %>
-    </div>
-
-  <% end %>
+<div class="row">
+<div class="span8">
+<div id="actions" class="pull-right">
+	<%= link_to "Edit event", edit_admin_event_path(@event) , class: "btn"%>
 </div>
+<%= image_tag @event.image(:cover) %>
+<div class="row">
+	<div class="span5">
+		<p class="lead">
+			<%= @event.body %>
+		</p>
+	</div>
+	<div class="span3">
+		<%= raw @event.sidebar %>
+	</div>
+</div>
+</div>
+
+<div class="span4">
+	<div class="well">
+		<p>
+			<b>Type:</b> <%= @event.event_type.name if @event.event_type %><br>
+			<b>Place:</b> <%= @event.event_place.name if @event.event_place %><br>
+			<b>Price Member:</b> <%= @event.price_member %><br>
+			<b>Price Other:</b> <%= @event.price_other %><br>
+		</p>
+		<h2>Dates</h2>
+		<ul>		
+			<% @event_dates.each do |date| %>
+			<li><%= date.datetime.strftime("%F %H:%M") %> <%= link_to 'Edit', edit_admin_event_event_date_path(@event, date), class: "btn btn-small" %> <%= link_to 'Destroy', admin_event_event_date_path(@event, date), confirm: 'Are you sure?', method: :delete, class: "btn btn-danger btn-small" %></li>
+			<% end %>
+		</ul>
+		<a href="#newEventDateModal" role="button" class="btn" data-toggle="modal">Add New Event Date</a>
+	</div>
+
+	<div id="newEventDateModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	    <h3 id="myModalLabel">Add Event Date</h3>
+	  </div>
+	    <%= simple_form_for(@new_event_date, url: admin_event_event_dates_path(params[:id])) do |f| %>
+	    <div class="modal-body">
+	      <%= f.error_notification %>
+
+	      <div class="form-inputs">
+	        <%= f.input :datetime, :input_html => {class: "span2"} %>
+	        <%= f.input :url, :input_html => { class: "span6" } %>
+	        <%= f.input :sold_out, as: :boolean, :input_html => { class: "span6" } %>
+	      </div>
+	    </div>
+
+	    <div class="modal-footer">
+	    	<div class="form-actions">
+	    	  <%= f.button :submit %>
+	    	</div>
+	    </div>
+
+
+	    <% end %>
+
+
+	</div>
+
+  
+
+</div>
+</div>
+
