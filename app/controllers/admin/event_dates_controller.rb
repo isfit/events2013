@@ -1,4 +1,6 @@
 class Admin::EventDatesController < ApplicationController
+  before_filter :admin_required
+  layout 'admin'
   def create
     @e = Event.find(params[:event_id])
     @event = EventDate.new(params[:event_date])
