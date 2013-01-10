@@ -1,3 +1,3 @@
 class EventPlace < ActiveRecord::Base
-  attr_accessible :latitude, :longitude, :title
+  attr_accessible :latitude, :longitude, :name
 end

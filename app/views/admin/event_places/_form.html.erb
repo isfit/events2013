@@ -1,0 +1,16 @@
+<div class="span12">
+  <%= simple_form_for(@event_place, url: @event_place.new_record? ? admin_event_places_path : admin_event_place_path(@event_place.id)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :name, :input_html => { class: "span6" } %>
+      <%= f.input :longitude, :input_html => { class: "span6" } %>
+      <%= f.input :latitude, :input_html => { class: "span6" } %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+
+  <% end %>
+</div>

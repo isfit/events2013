@@ -34,12 +34,22 @@ class Admin::EventsController < ApplicationController
   end
 
   def edit
+    @event = Event.find(params[:id])
+    @event_types = EventType.all
+    @event_places = EventPlace.all
   end
 
   def update
     @event = Event.find(params[:id])
-    @event_types = EventType.all
-    @event_places = EventPlace.all
+    @event.update_attributes(params[:event])
+
+    if @event.save
+      redirect_to admin_events_path
+    else
+      @event_types = EventType.all
+      @event_places = EventPlace.all
+      render action: "edit"
+    end
   end
 
   def create
@@ -51,6 +61,8 @@ class Admin::EventsController < ApplicationController
     if @event.save
       redirect_to admin_event_path(@event), notice: "Event was successfully created."
     else
+      @event_types = EventType.all
+      @event_places = EventPlace.all
       render action: "new"
     end
   end

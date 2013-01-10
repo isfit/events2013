@@ -1,5 +1,5 @@
 <div class="span12">
-<%= simple_form_for(@event, url: admin_events_path) do |f| %>
+<%= simple_form_for(@event, url: @event.new_record? ? admin_events_path : admin_event_path(@event.id)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
