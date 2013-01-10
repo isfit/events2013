@@ -17,16 +17,23 @@ class Admin::EventDatesController < ApplicationController
 
   def edit
     @event = EventDate.find(params[:id])
+    @events = Event.where(:deleted => false)
   end
 
   def update
     @event = EventDate.find(params[:id])
+    @event.update_attributes(params[:event_date])
 
+    if @event.save
+      redirect_to admin_event_path(@event.event)
+    else
+      render action: "edit"
+    end
   end
 
   def destroy
     @event = EventDate.find(params[:id])
     @event.destroy
-    redirect_to admin_event_path
+    redirect_to admin_event_path(@event.event)
   end
 end
