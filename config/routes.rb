@@ -2,6 +2,8 @@ Events::Application.routes.draw do
   get "events/index"
   get "events/show"
 
+  match ":year/:id" => "events#show"
+
   resources :sessions
   namespace :admin do
     resources :events do

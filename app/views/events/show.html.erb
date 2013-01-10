@@ -1,2 +1,56 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<div class="row">
+  <div class="span12">
+    
+  <header id="event-header">
+    <figure id="header-image">
+      <img src="http://i.imgur.com/0VGH9.jpg" alt="">
+    </figure>
+    <div class="header-text">
+      <h1><%=@event.title%></h1>
+
+      <div>
+
+      </div>
+
+
+
+      <div class="tickets">
+        <table>
+          <tr>
+            <td>Medlemmer</td>
+            <td><%=@event.price_member%>,-</td>
+          </tr>
+          <tr>
+            <td>Ikke-medlemmer</td>
+            <td><%=@event.price_other%>,-</td>
+          </tr>
+        </table>
+        <div id="testdump" class="event-button round">Kjøp billett</div>
+      </div>
+
+    </div>
+  </header>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="span8">
+    <div class="well">
+      <article>
+
+        <section class="body"><%=@event.body%></section>
+
+      </article>
+    </div>
+
+  </div>
+
+  <div class="span4">
+    <%= @event.sidebar.html_safe %>
+  </div>
+</div>
+
+
+

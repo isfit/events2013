@@ -7,28 +7,30 @@
     </article>
 
     <% @events.each do |event| %>
-      <article class="span8 event offset3" style="background:url(http://i.imgur.com/MVbvb.png)">
-        <h1 class="name"><%= event.title %></h1>
-    
-        <div class="meta">
-          <div class="location">
-            <p><%= event.event_place.name %></p>
-            <!-- TODO! -->
-            <p><%= event.event_dates[0].datetime.strftime('%H:%M') %></p>
+      <a href="<%= admin_events_path(event) %>">
+        <article class="span8 event offset3" style="background:url(http://i.imgur.com/MVbvb.png)">
+          <h1 class="name"><%= event.title %></h1>
+      
+          <div class="meta">
+            <div class="location">
+              <p><%= event.event_place.name %></p>
+              <!-- TODO! -->
+              <p><%= event.event_dates[0].datetime.strftime('%H:%M') %></p>
+            </div>
+      
+            <table class="price">
+                <tr>
+                  <td>Medl.</td>
+                  <td><%= event.price_member %>,-</td>
+                </tr>
+                <tr>
+                  <td>Ikke medl.</td>
+                  <td><%= event.price_other %>,-</td>
+                </tr>
+              </table>
           </div>
-    
-          <table class="price">
-              <tr>
-                <td>Medl.</td>
-                <td><%= event.price_member %>,-</td>
-              </tr>
-              <tr>
-                <td>Ikke medl.</td>
-                <td><%= event.price_other %>,-</td>
-              </tr>
-            </table>
-        </div>
-      </article>
+        </article>
+      </a>
     <% end %>
 
   </div>
