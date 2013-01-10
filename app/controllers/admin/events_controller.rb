@@ -44,7 +44,7 @@ class Admin::EventsController < ApplicationController
     @event.update_attributes(params[:event])
 
     if @event.save
-      redirect_to admin_events_path
+      redirect_to admin_event_path(@event)
     else
       @event_types = EventType.all
       @event_places = EventPlace.all
