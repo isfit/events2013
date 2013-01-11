@@ -9,7 +9,7 @@ class EventsController < ApplicationController
       hack = []
       if ev.length > 0
         ev.each do |x|
-          if x.event.publish_at < Time.now
+          if x.event.publish_at <= Time.now
             hack << x
           end
         end
@@ -21,5 +21,8 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+      if @event.publish_at > Time.now
+        redirect_to 'http://events.isfit.org'
+      end
   end
 end
