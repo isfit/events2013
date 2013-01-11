@@ -57,8 +57,12 @@ class Admin::EventsController < ApplicationController
   def create
     @event = Event.new(params[:event])
     @event.deleted = false
-    @last_weight = Event.order("weight DESC").first.weight
-    @last_weight ||= 0 
+    @highest_weight = Event.order("weight DESC").first
+    if @highest_weigh.nil? 
+      @last_weight = 0 
+    else
+      @last_weight = @highest_weight.weight
+    end
     @event.weight = 1 + @last_weight
     if @event.save
       redirect_to admin_event_path(@event), notice: "Event was successfully created."
