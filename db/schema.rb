@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130109143414) do
+ActiveRecord::Schema.define(:version => 20130111152942) do
 
   create_table "event_dates", :force => true do |t|
     t.datetime "datetime"
@@ -49,12 +49,16 @@ ActiveRecord::Schema.define(:version => 20130109143414) do
     t.datetime "publish_at"
     t.integer  "event_place_id"
     t.text     "sidebar"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "image_front_file_name"
+    t.string   "image_front_content_type"
+    t.integer  "image_front_file_size"
+    t.datetime "image_front_updated_at"
   end
 
   add_index "events", ["event_place_id"], :name => "index_events_on_event_place_id"

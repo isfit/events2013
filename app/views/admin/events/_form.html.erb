@@ -12,6 +12,7 @@
     <%= f.input :sidebar, :input_html => {class: "span6"} %>
     <%= f.input :publish_at, :input_html => {class: "span2"}, hint: "Time is in UTC (GMT +0). Norway is in UTC+1, so remember that." %>
     <%= f.file_field :image, hint: "Image to use for cover" %>
+    <%= f.file_field :image_front, hint: "Image to use on front page" %>
   </div>
 
   <div class="form-actions">
