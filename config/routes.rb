@@ -2,7 +2,7 @@ Events::Application.routes.draw do
   get "events/index"
   get "events/show"
 
-  match ":year/:id" => "events#show", :constraints =>  { :year => /\d/ }
+  match "2013/:id" => "events#show", :constraints =>  { :year => /\d/ }
 
   resources :sessions
   namespace :admin do
