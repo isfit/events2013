@@ -1,232 +1,51 @@
 <div class="span12">
+  <div class="row" id="eventwell">
 
-<div class="row" id="eventwell">
-  <div class="datewrapper row" id="07feb">
-    <article class="dateblock span2 offset1">
-      <span class="date">xx</span><span class="month">test</span>
-    </article>
+    <% @events.each do |dates| %>
+      <div class="datewrapper row" id="07feb">
 
-    <% @events.each do |event| %>
-      <a href="<%= admin_events_path(event) %>">
-        <article class="span8 event offset3" style="background:url(http://i.imgur.com/MVbvb.png)">
-          <h1 class="name"><%= event.title %></h1>
-      
-          <div class="meta">
-            <div class="location">
-              <p><%= event.event_place.name %></p>
-              <!-- TODO! -->
-              <p><%= event.event_dates[0].datetime.strftime('%H:%M') %></p>
-            </div>
-      
-            <table class="price">
-                <tr>
-                  <td>Medl.</td>
-                  <td><%= event.price_member %>,-</td>
-                </tr>
-                <tr>
-                  <td>Ikke medl.</td>
-                  <td><%= event.price_other %>,-</td>
-                </tr>
-              </table>
-          </div>
+          <% if dates.length > 0 %>
+        <article class="dateblock span2 offset1">
+          <span class="date"><%= dates.first.datetime.strftime('%d') %></span><span class="month">feb</span>
         </article>
-      </a>
+          <% end %>
+
+        
+        
+        <% dates.each do |date| %>
+
+          <% event = date.event %>
+          <a href="<%= admin_events_path(event) %>">
+            <article class="span8 event offset3" style="background:url(http://i.imgur.com/MVbvb.png)">
+
+
+              <h1 class="name"><%= event.title %></h1>
+          
+              <div class="meta">
+                <div class="location">
+                  <p><%= event.event_place.name %></p>
+                  <!-- TODO! -->
+                  <p><%= event.event_dates[0].datetime.strftime('%H:%M') %></p>
+                </div>
+          
+                <table class="price">
+                    <tr>
+                      <td>Medl.</td>
+                      <td><%= event.price_member %>,-</td>
+                    </tr>
+                    <tr>
+                      <td>Ikke medl.</td>
+                      <td><%= event.price_other %>,-</td>
+                    </tr>
+                  </table>
+              </div>
+            </article>
+          </a>
+
+        <% end %>
+      </div>
     <% end %>
 
+
   </div>
-  
-  <div class="datewrapper row" id="10feb">
-    <article class="dateblock span2 offset1">
-      <span class="date">10</span><span class="month">feb</span>
-    </article>
-  
-    <article class="span8 event offset3" style="background:url(http://i.imgur.com/MVbvb.png)">
-      <h1 class="name">The Pixies</h1>
-  
-      <div class="meta">
-        <div class="location">
-          <p>Klubben</p>
-          <p>21:00</p>
-        </div>
-  
-        <table class="price">
-            <tr>
-              <td>Medl.</td>
-              <td>150,-</td>
-            </tr>
-            <tr>
-              <td>Ikke medl.</td>
-              <td>160,-</td>
-            </tr>
-          </table>
-      </div>
-  
-    </article>
-  
-    <article class=" span8 offset3 event" style="background:url(http://i.imgur.com/xAEM1.png);">
-      <h1 class="name">Radiohead</h1>
-  
-      <div class="meta">
-        <div class="location">
-          <p>Bodegaen</p>
-          <p>21:00</p>
-        </div>
-  
-        <table class="price">
-            <tr>
-              <td>Medl.</td>
-              <td>150,-</td>
-            </tr>
-            <tr>
-              <td>Ikke medl.</td>
-              <td>160,-</td>
-            </tr>
-          </table>
-      </div>
-  
-    </article>
-  
-    <article class=" span8 offset3 event" style="background:url(http://i.imgur.com/x4cJM.png)">
-      <h1 class="name">Min Ko Naing</h1>
-  
-      <div class="meta" style="background:rgb(254,184,68)">
-        <div class="location">
-          <p>Storsalen</p>
-          <p>19:00</p>
-        </div>
-  
-        <table class="price">
-            <tr>
-              <td>Medl.</td>
-              <td>Gratis</td>
-            </tr>
-            <tr>
-              <td>Ikke medl.</td>
-              <td>40,-</td>
-            </tr>
-          </table>
-      </div>
-  
-    </article>
-  
-    <article class=" span8 offset3 event" style="background:url(http://i.imgur.com/MVbvb.png)">
-      <h1 class="name">The Pixies</h1>
-  
-      <div class="meta">
-        <div class="location">
-          <p>Klubben</p>
-          <p>21:00</p>
-        </div>
-  
-        <table class="price">
-            <tr>
-              <td>Medl.</td>
-              <td>150,-</td>
-            </tr>
-            <tr>
-              <td>Ikke medl.</td>
-              <td>160,-</td>
-            </tr>
-          </table>
-      </div>
-  
-    </article>
-  </div>
-
-
-
-
-  <div class="datewrapper row" id="11feb">
-    <article class="dateblock span2 offset1">
-      <span class="date">11</span><span class="month">feb</span>
-    </article>
-
-    <article class=" span8 offset3 event" style="background:url(http://i.imgur.com/x4cJM.png)">
-      <h1 class="name">Min Ko Naing</h1>
-
-      <div class="meta" style="background:rgb(254,184,68)">
-        <div class="location">
-          <p>Storsalen</p>
-          <p>19:00</p>
-        </div>
-
-        <table class="price">
-            <tr>
-              <td>Medl.</td>
-              <td>Gratis</td>
-            </tr>
-            <tr>
-              <td>Ikke medl.</td>
-              <td>40,-</td>
-            </tr>
-          </table>
-      </div>
-
-    </article>
-    <article class=" span8 offset3 event" style="background:url(http://i.imgur.com/x4cJM.png)">
-      <h1 class="name">Min Ko Naing</h1>
-
-      <div class="meta" style="background:rgb(254,184,68)">
-        <div class="location">
-          <p>Storsalen</p>
-          <p>19:00</p>
-        </div>
-
-        <table class="price">
-            <tr>
-              <td>Medl.</td>
-              <td>Gratis</td>
-            </tr>
-            <tr>
-              <td>Ikke medl.</td>
-              <td>40,-</td>
-            </tr>
-          </table>
-      </div>
-
-    </article>
-  </div>
-
- 
-
-</div>
-
-
-
-
-
-
-
-
-
-
-<div class="well" id="eventwell2" style="display:none;">
-<div style="height: 80px; margin-bottom: 2em;">
-	<input type="search" placeholder="Search">
-
-	<nav id="event-type-selector">
-		<ul>
-			<li onclick="findEventsType(1)">Concert</li>
-			<li>Theatre</li>
-			<li>Burlesque</li>
-		</ul>
-	</nav>
-</div>
-<!--
-<div style="position:relative; overflow: hidden; height: 235px; width: 100%;">
-<div style="position: absolute; top: 0; left:0;">
-	 -->
-	 
-<article class="date">
-	<span class="date">10</span><span class="month">feb</span>
-</article>
-<ul style="display: inline; text-align: right;" id="eventul">
-
-</ul>
-</div>
-
-
-
-
-
 </div>
