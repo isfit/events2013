@@ -7,5 +7,6 @@ class Event < ActiveRecord::Base
 
   attr_accessible :body, :price_member, :price_other, :publish_at, :sidebar, :title, :event_type_id, :event_place_id, :image
 
+  scope :published, lambda { where("publish_at < ?", Time.zone.now) }
 
 end

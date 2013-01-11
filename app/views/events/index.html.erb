@@ -23,11 +23,11 @@
 
               <h1 class="name"><%= event.title %></h1>
           
-              <div class="meta">
+              <div class="meta type<%= event.event_type.id %>">
                 <div class="location">
                   <p><%= event.event_place.name %></p>
                   <!-- TODO! -->
-                  <p><%= event.event_dates[0].datetime.strftime('%H:%M') %></p>
+                  <p><%= date.datetime.strftime('%H:%M') %></p>
                 </div>
           
                 <table class="price">
