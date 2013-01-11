@@ -3,7 +3,7 @@
     
   <header id="event-header">
     <figure id="header-image">
-      <img src="http://i.imgur.com/0VGH9.jpg" alt="">
+      <%= image_tag @event.image(:cover) %>
     </figure>
     <div class="header-text">
       <h1><%=@event.title%></h1>
@@ -25,7 +25,7 @@
             <td><%=@event.price_other%>,-</td>
           </tr>
         </table>
-        <div id="testdump" class="event-button round">Kjøp billett</div>
+        <div class="event-button round">Kjøp billett</div>
       </div>
 
     </div>
