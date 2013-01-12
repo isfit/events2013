@@ -7,8 +7,9 @@
     </figure>
     <div class="header-text">
       <h1><%=@event.title%></h1>
-
-      <div>
+      <p><%= @event.event_place.name %></p>
+      <p><%= @datetime.datetime.strftime('%d feb. %H:%M') %></p>
+    <div>
 
       </div>
 
@@ -25,7 +26,9 @@
             <td><%=@event.price_other%>,-</td>
           </tr>
         </table>
-        <div class="event-button round">Kjøp billett</div>
+        <a href="<%= @datetime.url %>">
+          <div class="event-button round">Kjøp billett</div>
+        </a>
       </div>
 
     </div>

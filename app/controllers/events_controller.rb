@@ -20,7 +20,9 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @datetime = EventDate.find(params[:id])
+    @event = @datetime.event
+
       if @event.publish_at > Time.now
         redirect_to 'http://events.isfit.org'
       end
