@@ -2,34 +2,30 @@
   <div class="row" id="eventwell">
 
     <% @events.each do |dates| %>
-      <div class="datewrapper row" id="07feb">
+
+    <!-- Hasty hack -->
+    <% if dates.length > 0 %>
+      <div class="datewrapper row" id="<%= dates.first.datetime.strftime('%d') %>feb">
+    <% else %>
+      <div class="datewrapper row empty">
+    <% end %>
 
           <% if dates.length > 0 %>
         <article class="dateblock span2 offset1">
           <span class="date"><%= dates.first.datetime.strftime('%d') %></span><span class="month">feb</span>
         </article>
           <% end %>
-
-        
-        
         <% dates.each do |date| %>
-
           <% event = date.event %>
-
           <a href="2013/<%= date.id %>">
-
             <article class="span8 event offset3" style="background:url(<%= event.image(:cover) %>)">
-
-
               <h1 class="name"><%= event.title %></h1>
-          
               <div class="meta type<%= event.event_type.id %>">
                 <div class="location">
                   <p><%= event.event_place.name %></p>
                   <!-- TODO! -->
                   <p><%= date.datetime.strftime('%H:%M') %></p>
                 </div>
-          
                 <table class="price">
                     <tr>
                       <td>Medl.</td>
@@ -43,7 +39,6 @@
               </div>
             </article>
           </a>
-
         <% end %>
       </div>
     <% end %>
