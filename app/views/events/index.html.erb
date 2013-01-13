@@ -18,7 +18,7 @@
         <% dates.each do |date| %>
           <% event = date.event %>
           <a href="2013/<%= date.id %>">
-            <article class="span8 event offset3" style="background:url(<%= event.image(:cover) %>)">
+            <article class="span8 event offset3" style="background:url(<%= event.image_front(:cover) %>)">
               <h1 class="name"><%= event.title %></h1>
               <div class="meta type<%= event.event_type.id %>">
                 <div class="location">
