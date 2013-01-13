@@ -290,82 +290,78 @@ div.event-button.round.disabled {
 }
 
 
-@media (min-width: 1200px) {
-  .offset1 {
-    margin-left: 130px;
-  }
+// @media (min-width: 1200px) {
+//   .offset1 {
+//     margin-left: 130px;
+//   }
 
 
-  #event-header img {
-    max-width: 920px;
-  }
-}
+//   #event-header img {
+//     max-width: 920px;
+//   }
+// }
 
-@media (max-width: 979px) and (min-width: 768px) {
-  .offset1 {
-    margin-left: 6px;
-  }
-}
-
-
-@media (max-width: 767px) {
-  #header-image {
-    height: 200px;
-    img {
-      min-height: 200px;
-      width: 100%;
-    }
-  }
-
-  article.event {
-    width: 100%;
-    max-width: none;
-  }
-
-  #event-header {
-    height: auto;
+// @media (max-width: 979px) and (min-width: 768px) {
+//   .offset1 {
+//     margin-left: 6px;
+//   }
+// }
 
 
-    .header-text {
-      position: relative;
-      width: 100%;
-      bottom: auto;
-      right: auto;
-    }
-  }
+// @media (max-width: 767px) {
+//   #header-image {
+//     height: 200px;
+//     img {
+//       min-height: 200px;
+//       width: 100%;
+//     }
+//   }
+
+//   article.event {
+//     width: 100%;
+//     max-width: none;
+//   }
+
+//   #event-header {
+//     height: auto;
 
 
-  .offset1 {
-    margin-left: 60px;
-  }
+//     .header-text {
+//       position: relative;
+//       width: 100%;
+//       bottom: auto;
+//       right: auto;
+//     }
+//   }
 
 
-  article.dateblock {
-    z-index: 999;
-    background: white;
-    margin-right: -20px;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: 50px;
-    top: 0;
-    left:0;
-    width: 100%;
-    margin-left: 0;
-    position: static;
-
-    span.date {
-      font-size: 1em;
-      display: inline;
-    }
-
-    span.month {
-      font-size: 1em;
-      display: inline;
-    }
-  }
-}
+//   .offset1 {
+//     margin-left: 60px;
+//   }
 
 
+//   article.dateblock {
+//     z-index: 999;
+//     background: white;
+//     margin-right: -20px;
+//     padding-left: 15px;
+//     padding-right: 15px;
+//     height: 50px;
+//     top: 0;
+//     left:0;
+//     width: 100%;
+//     margin-left: 0;
+//     position: static;
 
+//     span.date {
+//       font-size: 1em;
+//       display: inline;
+//     }
 
+//     span.month {
+//       font-size: 1em;
+//       display: inline;
+//     }
+//   }
+// }
 
