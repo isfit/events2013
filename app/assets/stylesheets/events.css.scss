@@ -76,6 +76,11 @@ h1.name {
 table.price {
   margin-left: 3em;
   text-align: left;
+  width: 130px;
+
+  td:last-of-type {
+    text-align: right;
+  }
 }
 
 span.date {
@@ -93,6 +98,9 @@ span.month {
   text-transform: uppercase;
   font-size: 4em;
 }
+
+
+
 
 
 
@@ -153,6 +161,7 @@ article.dateblock {
       border-radius: 50%;
       position: absolute;
       z-index: 1;
+      left: 0;
     }
 
     p {
@@ -220,6 +229,19 @@ article.dateblock {
     font-size: 2.5em;
     line-height: 1.2em;
   }
+
+  p {
+    margin: 0;
+  }
+
+  .event-details {
+    margin-top: 1em;
+    i {
+      width: 10px;
+      display: inline-block;
+      text-align: center;
+    }
+  }
 }
 
 div.event-button.round {
@@ -246,15 +268,19 @@ div.event-button.round.disabled {
   position: absolute;
   bottom: 0;
   width: 100%;
-}
 
-.tickets table {
-  margin: 1em 0;
-}
+  table {
+    margin: 1em 0;
 
-.tickets table td:first-of-type {
-  font-weight: bold;
-  width: 10em;
+    td:first-of-type {
+      font-weight: bold;
+      width: 10em;
+    }
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 
@@ -338,3 +364,8 @@ div.event-button.round.disabled {
     }
   }
 }
+
+
+
+
+

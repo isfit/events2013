@@ -32,7 +32,6 @@
 
 body {
 	// padding-top: 40px;
-  background: rgb(34,54,102);
 }
 
 // .navbar {
@@ -44,6 +43,7 @@ body {
 .navbar-inner {
   background: #fff;
   border-radius: 0;
+  border: 0;
 }
 
 
@@ -63,8 +63,58 @@ body {
   margin: 0;
   padding: 0 !important;
   padding: 15px 0px !important;
+  padding-top: .4em !important;
+
+  p {
+    text-transform: uppercase;
+    font-size: .8em;
+    letter-spacing: 0.68em;
+    color: black;
+    text-align: center;
+    margin-top: -.2em;
+  }
 }
 
 body.admin {
 	background-color: white;
+}
+
+
+
+html {
+  background: url(http://i.imgur.com/mU7FI.png);
+}
+
+body {
+  width: 100%;
+  padding: 0; margin: 0;
+  padding-bottom: 150px;
+  background-color: transparent; 
+}
+
+#bottom-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  z-index: 0;
+
+  p {
+    margin: 0;
+  }
+}
+
+#content-wrapper {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgb(34,54,102);
+  position: relative;
+  box-shadow: 0 0 10px #222;
+  padding-bottom: 5em;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+
 }
