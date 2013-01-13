@@ -31,9 +31,13 @@
             <td><%=@event.price_other%>,-</td>
           </tr>
         </table>
+        <% if Time.now >= Time.parse("2013-01-14 18:00") %>
         <a href="<%= @datetime.url %>">
           <div class="event-button round">Buy ticket</div>
         </a>
+        <% else %>
+        <p>Ticket sale will be opened at 19.00</p>
+        <% end %>
       </div>
 
     </div>
