@@ -11,7 +11,9 @@
     <%= f.input :body, :input_html => {class: "span6"} %>
     <%= f.input :sidebar, :input_html => {class: "span6"} %>
     <%= f.input :publish_at, :input_html => {class: "span2"}, hint: "Time is in UTC (GMT +0). Norway is in UTC+1, so remember that." %>
-    <%= f.file_field :image, hint: "Image to use for cover" %>
+    <p>Image for event page(920x420)</p>
+    <%= f.file_field :image, hint: "Image to use for cover" %><br>
+    <p>Image for front page(920x220)</p>
     <%= f.file_field :image_front, hint: "Image to use on front page" %>
   </div>
 
