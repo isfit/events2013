@@ -23,16 +23,16 @@
       <div class="tickets">
         <table>
           <tr>
-            <td>Medlemmer</td>
+            <td>Member</td>
             <td><%=@event.price_member%>,-</td>
           </tr>
           <tr>
-            <td>Ikke-medlemmer</td>
+            <td>Non-member</td>
             <td><%=@event.price_other%>,-</td>
           </tr>
         </table>
         <a href="<%= @datetime.url %>">
-          <div class="event-button round">Kjøp billett</div>
+          <div class="event-button round">Buy ticket</div>
         </a>
       </div>
 
