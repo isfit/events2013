@@ -23,9 +23,6 @@ def cors_preflight_check
 end
 
 def index
-
-    
-
     evts = EventDate.includes(:event).order("datetime ASC")
     
     @events = []
@@ -48,7 +45,7 @@ def index
     
     respond_to do |format|
       format.html
-      format.json { render :json => @events }
+      format.json { render :json => @events.to_json( { :include =>  :event }) }
     end
   
   end
