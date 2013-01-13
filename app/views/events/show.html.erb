@@ -32,7 +32,7 @@
           </tr>
         </table>
         <% if Time.now >= Time.parse("2013-01-14 18:00") %>
-        <a href="<%= @datetime.url %>">
+        <a href="http://www.samfundet.no/arrangement/billetter/betal/<%= @datetime.url %>">
           <div class="event-button round">Buy ticket</div>
         </a>
         <% else %>
