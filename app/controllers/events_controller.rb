@@ -24,8 +24,6 @@ end
 
 def index
 
-    
-
     evts = EventDate.includes(:event).order("datetime ASC")
     
     @events = []
@@ -35,7 +33,7 @@ def index
       hack = []
       if ev.length > 0
         ev.each do |x|
-          if x.event.publish_at <= Time.now
+          if x.event.publish_at <= Time.now || (current_user && current_user.admin?)
             hack << x
           end
         end
@@ -57,8 +55,8 @@ def index
     @datetime = EventDate.find(params[:id])
     @event = @datetime.event
 
-      if @event.publish_at > Time.now
-        redirect_to 'http://events.isfit.org'
+      if not @event.publish_at <= Time.now || (current_user && current_user.admin?)
+        redirect_to root_url
       end
   end
 end
