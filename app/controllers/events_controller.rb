@@ -1,5 +1,9 @@
 class EventsController < ApplicationController
+
   def index
+
+    
+
     evts = EventDate.includes(:event).order("datetime ASC")
     
     @events = []
@@ -16,7 +20,15 @@ class EventsController < ApplicationController
       end
 
       @events << hack
+
+
     end
+    
+    respond_to do |format|
+      format.html
+      format.json { render :json => @events }
+    end
+  
   end
 
   def show
