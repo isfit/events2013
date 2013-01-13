@@ -9,6 +9,7 @@ gem 'mysql2'
 gem 'simple_form'
 gem 'paperclip'
 gem 'bluecloth'
+gem 'newrelic_rpm'
 
 
 # Gems used only for assets and not required
