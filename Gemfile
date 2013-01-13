@@ -8,6 +8,7 @@ gem 'rails', '3.2.8'
 gem 'mysql2'
 gem 'simple_form'
 gem 'paperclip'
+gem 'bluecloth'
 
 
 # Gems used only for assets and not required
