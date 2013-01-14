@@ -14,3 +14,39 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+
+$(function(){
+  $(window).on('scroll', function(ev){
+    var scrollTop = $(window).scrollTop();
+
+    if(scrollTop<=60) {
+      $('.active').removeClass('active');
+      return;
+    }
+
+    $('.datewrapper').each(function(){
+      if(scrollTop+20 >= $(this).offset().top) {
+        $(this).children().first().addClass('active');
+      }
+      else {
+        $(this).children().first().removeClass('active');
+        return;
+      }
+    });
+
+    var db = $('.dateblock.active').last();
+    var evnt = db.parent();
+    if(!((evnt.position().top + evnt.height()) > (scrollTop + db.height()+20))) {
+      db.addClass('stationary').removeClass('active');
+      
+      $('.active').removeClass('active')
+      $('.stationary').last().addClass('active');
+    }
+    else {
+      db.removeClass('stationary');
+    }
+
+
+  });
+});

@@ -103,31 +103,45 @@ span.month {
 
 
 
-
-article.dateblock {
-  background: white;
-  margin-right: -20px;
-  padding-left: 15px;
-  padding-right: 15px;
-  height: 200px;
-  min-width: 170px;
-  position: fixed;
-  position: absolute;
-}
-
-
 .offset1 {
   margin-left: 60px;
 }
 
 
 .datewrapper {
-  position: static;
+  position: relative;
   margin-bottom: 2em;
 
   &.empty {
     display: none;
   }
+
+
+
+
+
+  article.dateblock {
+    background: white;
+    margin-right: -20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 200px;
+    min-width: 170px;
+    position: fixed;
+    position: absolute;
+
+    &.active:not(.stationary) {
+      position: fixed;
+      top: 20px;
+    }
+
+    &.stationary {
+      position: absolute !important;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
 }
 
 
