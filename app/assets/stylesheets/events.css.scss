@@ -257,6 +257,15 @@ div.event-button.round {
   vertical-align: middle;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+
+  line-height: 2em;
+  margin-left: 4.5em;
+
+  &:active {
+    box-shadow: 0 2px 4px #333 inset;
+
+    line-height: 2.3em;
+  }
 }
 
 div.event-button.round.disabled {
