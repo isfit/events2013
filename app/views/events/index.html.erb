@@ -19,7 +19,7 @@
           <% event = date.event %>
           <a href="2013/<%= date.id %>">
             <article class="span8 event offset3" style="background:url(<%= event.image_front(:cover) %>); background-size: cover;">
-              <h1 class="name"><%= event.title %></h1>
+              <h1 class="name"><span><%= event.title %></span></h1>
               <div class="meta type<%= event.event_type.id %>">
                 <div class="location">
                   <p><%= event.event_place.name %></p>
