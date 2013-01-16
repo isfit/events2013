@@ -72,4 +72,12 @@ def index
         redirect_to root_url
       end
   end
+
+  def api
+    @events = Event.published
+
+    respond_to do |format|
+      format.json { render :json => @events.to_json(:include=>[:event_dates, :event_place, :event_type]) }
+    end
+  end
 end
