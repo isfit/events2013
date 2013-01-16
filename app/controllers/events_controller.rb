@@ -24,6 +24,16 @@ end
 
 def index
 
+
+    types = EventType.select(:name).all
+
+    if !params[:eventtype].nil? && !(types.any? { |f|  f[:name].downcase == params[:eventtype].tr('_', ' ') })
+      if params[:eventtype] != 'striptease'
+        redirect_to root_path
+        return
+      end
+    end
+
     evts = EventDate.includes(:event).order("datetime ASC")
     
     @events = []

@@ -1,6 +1,26 @@
 <div class="span12">
   <div class="row" id="eventwell">
 
+
+    <% if @events.flatten.empty? %>
+    <div class="span12">
+      <% if params[:eventtype]=='striptease' %>
+        <div class="label-info" style="padding: 1em;">
+          <p style="font-size: 1.5em; margin:0; text-align: center; color: white;">
+            For a private session, please contact Dag-Inge Aas.
+          </p>
+        </div>
+      <% else %>
+      
+        <div class="label-info" style="padding: 1em;">
+          <p style="font-size: 1.5em; margin:0; text-align: center; color: white;">We are sorry, but there are at the moment no published <em><%= params[:eventtype] %></em> events.</p>
+        </div>
+      </div>
+      <% end %>
+    <% else %>
+
+
+
     <% @events.each do |dates| %>
 
     <!-- Hasty hack -->
@@ -43,6 +63,6 @@
       </div>
     <% end %>
 
-
+    <% end %>
   </div>
 </div>
