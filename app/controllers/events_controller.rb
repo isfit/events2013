@@ -34,7 +34,10 @@ def index
       if ev.length > 0
         ev.each do |x|
           if x.event.publish_at <= Time.now || (current_user && current_user.admin?)
-            hack << x
+
+            if (params[:eventtype].nil?) || ((not params[:eventtype].nil?) && (params[:eventtype] == x.event.event_type.name.downcase.tr(" ", "_")))
+              hack << x
+            end
           end
         end
       end
