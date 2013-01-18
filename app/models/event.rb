@@ -10,4 +10,8 @@ class Event < ActiveRecord::Base
 
   scope :published, lambda { where("publish_at < ?", Time.zone.now) }
 
+  def front_image_url
+    self.image_front(:cover)
+  end
+
 end

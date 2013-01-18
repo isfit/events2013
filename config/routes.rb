@@ -16,6 +16,8 @@ Events::Application.routes.draw do
     resources :event_places
   end
 
+  match '/events/api.:format' => 'events#api'
+
   match 'login' => 'sessions#new'
   match 'logout' => 'sessions#destroy'
 
