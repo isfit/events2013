@@ -77,7 +77,7 @@ def index
     @events = Event.published
 
     respond_to do |format|
-      format.json { render :json => @events.to_json(:include=>[:event_dates, :event_place, :event_type]) }
+      format.json { render :json => @events.to_json(:include=>[:event_dates, :event_place, :event_type], :methods=>[:front_image_url])}
     end
   end
 end
