@@ -11,8 +11,12 @@
       
       <div class="event-details">
         <p><i class="icon-map-marker"></i> <%= @event.event_place.name %></p>
-        <p><i class="icon-calendar"></i> <%= @datetime.datetime.strftime('%d feb') %></p>
-        <p><i class="icon-time"></i> <%= @datetime.datetime.strftime('%H:%M') %></p>
+        <p><i class="icon-calendar"></i> <%= @datetime.start_at.strftime('%d feb') %></p>
+        <p><i class="icon-time"></i> <%= @datetime.start_at.strftime('%H:%M') %> 
+          <% if @datetime.end_at %>
+            - <%= @datetime.end_at.strftime("%H:%M") %>
+          <% end %>
+        </p>
       </div>
     <div>
 

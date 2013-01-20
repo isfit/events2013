@@ -5,7 +5,8 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :datetime, :input_html => {class: "span2"} %>
+      <%= f.input :start_at, :input_html => {class: "span2"} %>
+      <%= f.input :end_at, :input_html => {class: "span2"} %>
       <%= f.input :event_id, collection: @events, as: :select, :input_html => { class: "span6" } %>
       <%= f.input :url, :input_html => { class: "span6" } %>
       <%= f.input :sold_out, as: :boolean, :input_html => { class: "span6" } %>

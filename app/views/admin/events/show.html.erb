@@ -30,7 +30,7 @@
 		<h2>Dates</h2>
 		<ul>		
 			<% @event_dates.each do |date| %>
-			<li><%= date.datetime.strftime("%F %H:%M") %> <%= link_to 'Edit', edit_admin_event_event_date_path(@event, date), class: "btn btn-small" %> <%= link_to 'Destroy', admin_event_event_date_path(@event, date), confirm: 'Are you sure?', method: :delete, class: "btn btn-danger btn-small" %></li>
+			<li>Start: <%= date.start_at.strftime("%F %H:%M") if date.start_at %>, End: <%= date.end_at.strftime("%F %H:%M") if date.end_at %> <%= link_to 'Edit', edit_admin_event_event_date_path(@event, date), class: "btn btn-small" %> <%= link_to 'Destroy', admin_event_event_date_path(@event, date), confirm: 'Are you sure?', method: :delete, class: "btn btn-danger btn-small" %></li>
 			<% end %>
 		</ul>
 		<a href="#newEventDateModal" role="button" class="btn" data-toggle="modal">Add New Event Date</a>

@@ -38,7 +38,7 @@ def index
     
     @events = []
     [7,8,9,10,11,12,13,14,15,16,17].each do |tall|
-      ev = (evts.includes(:event).where('extract(day from datetime) = ?', tall))
+      ev = (evts.includes(:event).where('extract(day from start_at) = ?', tall))
       
       hack = []
       if ev.length > 0
