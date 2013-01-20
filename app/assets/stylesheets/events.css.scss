@@ -86,6 +86,9 @@ h1.name {
 table.price {
   text-align: left;
   width: 130px;
+  position: absolute;
+  bottom: 5.5em;
+  left: 4em;
 
   td:last-of-type {
     text-align: right;
