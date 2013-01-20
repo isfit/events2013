@@ -23,8 +23,9 @@ div.meta {
   position: absolute;
   bottom: -5em;
   left: -3em;
-  padding-left: 1em;
-  padding-top: 2em;
+  padding-left: 3.5em;
+  padding-right: 2.5em;
+  padding-top: 1em;
   text-align: center;
   font-size: .9em;
 }
@@ -57,6 +58,11 @@ div.meta div {
   margin: .5em 0;
 }
 
+div.location {
+  margin-left: -1em;
+  margin-bottom: 1em;
+}
+
 h1.name {
   position: absolute;
   bottom: .2em;
@@ -70,10 +76,10 @@ h1.name {
   display: inline;
   padding: 0.2em 1.2em;
   background: rgba(0, 0, 0, .7);
+  font-size: 2em;
 }
 
 table.price {
-  margin-left: 3em;
   text-align: left;
   width: 130px;
 
