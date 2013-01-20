@@ -2,7 +2,7 @@
   <div class="row" id="eventwell">
 
 
-    <% if @events.flatten.empty? %>
+    <% if @events.size == 0 %>
     <div class="span12">
       <% if params[:eventtype]=='striptease' %>
         <div class="label-info" style="padding: 1em;">
@@ -19,27 +19,27 @@
       <% end %>
     <% else %>
 
+    <% last_date = 0 %>
+    <% @events.each do |date| %>
+      <% current_date = date.start_at.strftime("%d").to_i %>
+      <% if current_date != last_date %>
+        </div>
+      <% end %>
+      <% if current_date != last_date %>
+        <div class="datewrapper row" id="<%= date.start_at.strftime('%d') %>feb">
+      <% end %>
 
-
-    <% @events.each do |dates| %>
-
-    <!-- Hasty hack -->
-    <% if dates.length > 0 %>
-      <div class="datewrapper row" id="<%= dates.first.start_at.strftime('%d') %>feb">
-    <% else %>
-      <div class="datewrapper row empty">
-    <% end %>
-
-          <% if dates.length > 0 %>
+      <% if current_date != last_date %>
         <article class="dateblock span2 offset1">
           <span class="date">
-            <%= dates.first.start_at.strftime('%d') %> 
+            <%= date.start_at.strftime('%d') %> 
           </span>
-          <span class="month">feb</span>
+          <span class="month">
+            <%= date.start_at.strftime('%b') %>
+          </span>
         </article>
-          <% end %>
-        <% dates.each do |date| %>
-          <% event = date.event %>
+      <% end %>
+      <% event = date.event %>
           <a href="/2013/<%= date.id %>">
             <article class="span8 event offset3" style="background:url(<%= event.image_front(:cover) %>); background-size: cover;">
               <h1 class="name"><span><%= event.title %></span></h1>
@@ -65,9 +65,8 @@
                   </table>
               </div>
             </article>
-          </a>
-        <% end %>
-      </div>
+          </a>      
+      <% last_date = current_date %>
     <% end %>
 
     <% end %>
