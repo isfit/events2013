@@ -25,7 +25,7 @@ end
 def index
 
   # Gets all eventdates and sorts them based on date and weight
-  @events = EventDate.joins(:event).order("extract(day from start_at) ASC, events.weight DESC")
+  @events = EventDate.joins(:event).order("start_at ASC, events.weight DESC")
 
   if not (current_user && current_user.admin?)
     @events = @events.where("publish_at < '#{Time.now}'")
