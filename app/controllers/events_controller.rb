@@ -55,6 +55,28 @@ end
   end
 
   def api
+
+    # Gets all eventdates and sorts them based on date and weight
+    @events = EventDate.joins(:event).order("events.weight DESC")
+
+    if not (current_user && current_user.admin?)
+      @events = @events.where("publish_at < '#{Time.now}'")
+    end
+
+    if params.has_key?(:limit)
+      @events = @events[0..(Integer(params['limit'])-1)]
+      @events = @events.sort_by{|a| a.start_at}
+    end
+
+      
+    respond_to do |format|
+      format.html
+      format.json { render :json => @events.to_json( { :include =>  :event }) }
+    end
+    
+  end
+
+  def iosapi
     @events = Event.published
 
     respond_to do |format|

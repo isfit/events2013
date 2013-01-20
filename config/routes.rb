@@ -20,6 +20,7 @@ Events::Application.routes.draw do
   end
 
   match '/events/api.:format' => 'events#api'
+  match '/events/iosapi.:format' => 'events#iosapi'
 
   match ":eventtype" => "events#index"
 
