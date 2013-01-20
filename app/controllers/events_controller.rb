@@ -33,6 +33,10 @@ def index
 
   @festival_events = @events.where("all_festival = 1")
   @events = @events.where("all_festival IS NULL OR all_festival = 0")
+
+  if params.has_key?(:eventtype)
+    @events = @events.joins(:event => :event_type).where('event_types.name = ?', params['eventtype'].tr('_', ' '))
+  end
     
   respond_to do |format|
     format.html
