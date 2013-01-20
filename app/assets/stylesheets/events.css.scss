@@ -23,8 +23,9 @@ div.meta {
   position: absolute;
   bottom: -5em;
   left: -3em;
-  padding-left: 1em;
-  padding-top: 2em;
+  padding-left: 3.5em;
+  padding-right: 2.5em;
+  padding-top: 1em;
   text-align: center;
   font-size: .9em;
 }
@@ -49,12 +50,21 @@ div.meta {
   background: rgb(251,188,58);
 }
 
+.type7 {
+  background: #222;
+}
+
 div.meta p {
   margin: 0;
 }
 
 div.meta div {
   margin: .5em 0;
+}
+
+div.location {
+  margin-left: -1em;
+  margin-bottom: 1em;
 }
 
 h1.name {
@@ -70,10 +80,10 @@ h1.name {
   display: inline;
   padding: 0.2em 1.2em;
   background: rgba(0, 0, 0, .7);
+  font-size: 2em;
 }
 
 table.price {
-  margin-left: 3em;
   text-align: left;
   width: 130px;
 
@@ -223,7 +233,7 @@ span.month {
   position: absolute;
   top: 0;
   right: 0;
-  width: 250px;
+  width: 310px;
   height: 100%;
   color: white;
   background: rgba(0,0,0,.7);
