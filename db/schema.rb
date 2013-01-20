@@ -11,17 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130120135830) do
+ActiveRecord::Schema.define(:version => 20130120154343) do
 
   create_table "event_dates", :force => true do |t|
     t.datetime "datetime"
     t.integer  "event_id"
     t.string   "url"
     t.boolean  "sold_out"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.datetime "start_at"
     t.datetime "end_at"
+    t.boolean  "all_festival"
   end
 
   add_index "event_dates", ["event_id"], :name => "index_event_dates_on_event_id"
