@@ -69,6 +69,48 @@
       <% last_date = current_date %>
     <% end %>
 
+    <div class="datewrapper row" id="allfeb">
+
+      <article class="dateblock span2 offset1">
+        <span class="date">
+          All 
+        </span>
+        <span class="month">
+          feb
+        </span>
+      </article>
+
+    <% @festival_events.each do |date| %>
+
+      <% event = date.event %>
+          <a href="/2013/<%= date.id %>">
+            <article class="span8 event offset3" style="background:url(<%= event.image_front(:cover) %>); background-size: cover;">
+              <h1 class="name"><span><%= event.title %></span></h1>
+              <div class="meta type<%= event.event_type.id %>">
+                <div class="location">
+                  <p><%= event.event_place.name %></p>
+                  <!-- TODO! -->
+                  <p><%= date.start_at.strftime('%H:%M') %>
+                    <% if date.end_at %>
+                      - <%= date.end_at.strftime("%H:%M") %>
+                    <% end %>
+                  </p>
+                </div>
+                <table class="price">
+                    <tr>
+                      <td>Member</td>
+                      <td><%= event.price_member %>,-</td>
+                    </tr>
+                    <tr>
+                      <td>Non-member</td>
+                      <td><%= event.price_other %>,-</td>
+                    </tr>
+                  </table>
+              </div>
+            </article>
+          </a>      
+    <% end %>
+
     <% end %>
   </div>
 </div>
