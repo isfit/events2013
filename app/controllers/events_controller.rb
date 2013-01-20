@@ -30,6 +30,9 @@ def index
   if not (current_user && current_user.admin?)
     @events = @events.where("publish_at < '#{Time.now}'")
   end
+
+  @festival_events = @events.where("all_festival = 1")
+  @events = @events.where("all_festival IS NULL OR all_festival = 0")
     
   respond_to do |format|
     format.html
