@@ -2,8 +2,11 @@ Events::Application.routes.draw do
   get "events/index"
   get "events/show"
 
+  match 'login' => 'sessions#new'
+  match 'logout' => 'sessions#destroy'
+
   match "2013/:id" => "events#show", :constraints =>  { :year => /\d/ }
-  match ":eventtype" => "events#index"
+
 
   resources :sessions
   namespace :admin do
@@ -18,8 +21,7 @@ Events::Application.routes.draw do
 
   match '/events/api.:format' => 'events#api'
 
-  match 'login' => 'sessions#new'
-  match 'logout' => 'sessions#destroy'
+  match ":eventtype" => "events#index"
 
   root :to => 'events#index'
 end
