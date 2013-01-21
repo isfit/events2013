@@ -14,4 +14,25 @@ class Event < ActiveRecord::Base
     self.image_front(:cover)
   end
 
+  def body_as_html
+	    bc = BlueCloth.new(self.body) 
+	    text = bc.to_html
+	    return text.html_safe
+  end
+
+  def start_at
+    e = self.event_dates.first
+    e.nil? ? nil : e.start_at
+  end
+
+  def end_at
+    e = self.event_dates.first
+    e.nil? ? nil : e.end_at
+  end
+
+  def all_festival
+    e = self.event_dates.first
+    e.nil? ? nil : e.all_festival
+  end
+
 end
