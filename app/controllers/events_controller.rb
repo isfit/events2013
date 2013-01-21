@@ -36,6 +36,8 @@ def index
 
   if params.has_key?(:eventtype)
     @events = @events.joins(:event => :event_type).where('event_types.name = ?', params['eventtype'].tr('_', ' '))
+    @festival_events = @festival_events.joins(:event => :event_type).where('event_types.name = ?', params['eventtype'].tr('_', ' '))
+
   end
     
   respond_to do |format|
