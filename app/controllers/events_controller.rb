@@ -80,7 +80,7 @@ end
     @events = Event.published
 
     respond_to do |format|
-      format.json { render :json => @events.to_json(:include=>[:event_dates, :event_place, :event_type], :methods=>[:front_image_url, :body_as_html, :start_at, :end_at, :all_festival], :except => [:body, :sidebar, :image_content_type, :image_file_name, :image_file_size, :image_front_content_type, :image_front_file_name, :image_front_file_size, :image_front_updated_at, :image_updated_at, :publish_at])}
+      format.json { render :json => @events.to_json(:include=>[:event_dates, :event_place, :event_type], :methods=>[:front_image_url, :body_as_html, :start_at, :end_at, :all_festival, :festival_day], :except => [:body, :sidebar, :image_content_type, :image_file_name, :image_file_size, :image_front_content_type, :image_front_file_name, :image_front_file_size, :image_front_updated_at, :image_updated_at, :publish_at])}
     end
   end
 end
