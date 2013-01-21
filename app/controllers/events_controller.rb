@@ -33,6 +33,10 @@ def index
 
   @festival_events = @events.where("all_festival = 1")
   @events = @events.where("all_festival IS NULL OR all_festival = 0")
+
+  if params.has_key?(:eventtype)
+    @events = @events.joins(:event => :event_type).where('event_types.name = ?', params['eventtype'].tr('_', ' '))
+  end
     
   respond_to do |format|
     format.html
@@ -70,5 +74,13 @@ end
       format.json { render :json => @events.to_json( { :include =>  :event }) }
     end
     
+  end
+
+  def iosapi
+    @events = Event.published
+
+    respond_to do |format|
+      format.json { render :json => @events.to_json(:include=>[:event_dates, :event_place, :event_type], :methods=>[:front_image_url])}
+    end
   end
 end
