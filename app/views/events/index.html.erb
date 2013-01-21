@@ -75,6 +75,8 @@
 
   </div>
 
+  <% unless @festival_events.empty? %>
+
     <div class="datewrapper row" id="allfeb">
 
       <article class="dateblock span2 offset1">
@@ -116,7 +118,9 @@
             </article>
           </a>      
     <% end %>
-  </div>
+    </div>
+    
+    <% end %>
     <% end %>
   </div>
 </div>
