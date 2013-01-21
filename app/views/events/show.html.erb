@@ -35,14 +35,10 @@
             <td><%=@event.price_other%>,-</td>
           </tr>
         </table>
-        <% if @datetime.id == 6 %>
-          <% if Time.now >= Time.parse("2013-01-14 18:00") %>
+        <% if @datetime.url && @datetime.url != "" %>
           <a href="http://www.samfundet.no/arrangement/billetter/betal/<%= @datetime.url %>">
             <div class="event-button round">Buy ticket</div>
           </a>
-          <% else %>
-          <p>Ticket sale will be opened at 19.00</p>
-          <% end %>
         <% end %>
       </div>
 
