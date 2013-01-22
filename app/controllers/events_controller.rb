@@ -22,6 +22,14 @@ class EventsController < ApplicationController
     end
   end
 
+  def free
+    @events = EventDate.joins(:event).order("start_at ASC")
+    @events = @events.where("price_member = 0 AND price_other = 0")
+    @festival_events = @events.where("all_festival = 1")
+    @events = @events.where("all_festival = 0 OR all_festival IS NULL")
+    render 'index'
+  end
+
   def index
 
     # Gets all eventdates and sorts them based on date and weight

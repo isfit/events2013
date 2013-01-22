@@ -4,6 +4,7 @@ Events::Application.routes.draw do
   get "events/index"
   get "events/show"
   get "events/all" => "events#index"
+  get "events/free" => "events#free"
 
   match 'login' => 'sessions#new'
   match 'logout' => 'sessions#destroy'
