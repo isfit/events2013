@@ -8,6 +8,10 @@ $other: #222;
 $performing: #0481b9;
 $art: #223366;
 
+.promo-row a:hover {
+  text-decoration: none;
+}
+
 .border-concert {
   height: 10px;
   width: 100%;
@@ -79,6 +83,9 @@ $art: #223366;
 
 #top-right-up {
   color: white;
+  &:hover {
+    background: $plenary;
+  }
   h1 {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
     margin-left: 2%; 
@@ -89,6 +96,9 @@ $art: #223366;
   background: url(http://events.isfit.org/system/events/images/000/000/076/cover/standup_tre_stk_stor.jpg?1358702190) #101010 top no-repeat;
   background-size: cover;
   color: white;
+  &:hover {
+    background: $performing;
+  }
   h1 {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
     margin-top: 65%;
@@ -99,6 +109,9 @@ $art: #223366;
 #top-right-down2 {
   background-color: #222;
   color: white;
+  &:hover {
+    background: $other;
+  }
   h1 {
     margin-top: 30%;
     text-align: center;
@@ -114,6 +127,9 @@ $art: #223366;
   height: 460px;
   color: white;
   border-top: 5px yellow;
+  &:hover {
+    background: $concert;
+  }
   h1 {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
     margin-top: 75%;
@@ -128,6 +144,9 @@ $art: #223366;
 
 #middle-left-up {
   color: white;
+  &:hover {
+    background: $plenary;
+  }
   h1 {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
     margin-top: 33%;
@@ -140,6 +159,9 @@ $art: #223366;
   background: url(http://events.isfit.org/system/events/images/000/000/056/cover/danseaften_stor.jpg?1358693596) #101010 top no-repeat;
   background-size: cover;
   color: white;
+  &:hover {
+    background: $performing;
+  }
   h1 {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
     margin-left: 2%; 
@@ -150,6 +172,9 @@ $art: #223366;
   background: url(http://events.isfit.org/system/events/images/000/000/009/cover/Skjermbilde_2013-01-20_kl._13.31.58.png?1358685147) #101010 top no-repeat;
   background-size: cover;
   color: white;
+  &:hover {
+    background: $other;
+  }
   h1 {
     margin-top: 20%;
     text-align: center;
@@ -166,6 +191,9 @@ $art: #223366;
 
 #lower-left-up {
   color: white;
+  &:hover {
+    background: $concert;
+  }
   h1 {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
     margin-top: 33%;
@@ -177,6 +205,9 @@ $art: #223366;
 #lower-left-down1 {
   background-color: #3B5998;
   color: white;
+  &:hover {
+    background: darken(#3B5998, 20%);
+  }
   h1 {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
     text-align: right;
@@ -187,6 +218,9 @@ $art: #223366;
 #lower-left-down2 {
   background-color: #4099FF;
   color: white;
+  &:hover {
+    background: darken(#4099FF, 20%);
+  }
   h1 {
     font-size: 10em;
     text-align: right;
@@ -203,6 +237,9 @@ $art: #223366;
 
 #lower-right-up {
   color: white;
+  &:hover {
+    background: $plenary;
+  }
   h1 {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
     margin-top: 33%;
@@ -227,14 +264,15 @@ $art: #223366;
 }
 
 #lower-right-down2 {
-  background: url(http://events.isfit.org/system/events/images/000/000/009/cover/Skjermbilde_2013-01-20_kl._13.31.58.png?1358685147) #101010 top no-repeat;
+  background: url(http://events.isfit.org/system/events/images/000/000/017/cover/Skjermbilde_2013-01-20_kl._16.25.04.png?1358695541) #101010 top no-repeat;
   background-size: cover;
   color: white;
   &:hover {
-    background: $other;
+    background: $concert;
   }
   h1 {
-    margin-top: 20%;
+    margin-top: 25%;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
     text-align: center;
   }
 }
