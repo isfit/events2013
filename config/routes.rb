@@ -1,6 +1,9 @@
 Events::Application.routes.draw do
+  get "marketing/poster"
+
   get "events/index"
   get "events/show"
+  get "events/all" => "events#index"
 
   match 'login' => 'sessions#new'
   match 'logout' => 'sessions#destroy'
@@ -24,5 +27,5 @@ Events::Application.routes.draw do
 
   match ":eventtype" => "events#index"
 
-  root :to => 'events#index'
+  root :to => 'marketing#poster'
 end
