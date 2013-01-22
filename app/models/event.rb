@@ -36,8 +36,9 @@ class Event < ActiveRecord::Base
   end
 
   def festival_day
-    unless (self.event_dates.first.nil? || self.event_dates.first.start_at.nil?)
-      self.event_dates.first.start_at.strftime("%B %d., %A")
+    first = self.event_dates.first
+    unless (first.nil? || first.all_festival || first.start_at.nil?)
+      first.start_at.strftime("%B %d., %A")
     else
       "All festival"
     end
