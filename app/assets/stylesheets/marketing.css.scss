@@ -1,0 +1,306 @@
+// Place all the styles related to the marketing controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$concert: #38c0f0;
+$plenary: #fbbc3a;
+$other: #222;
+$performing: #0481b9;
+$art: #223366;
+$varbox: hsl(293, 100%, 31%);
+$varbox: #D83415;
+
+.promo-row a:hover {
+  text-decoration: none;
+}
+
+.border-concert {
+  height: 10px;
+  width: 100%;
+  background-color: $concert;
+}
+
+.border-plenary {
+  height: 10px;
+  width: 100%;
+  background-color: $plenary;
+}
+
+.border-other {
+  height: 10px;
+  width: 100%;
+  background-color: $other; 
+}
+
+.border-performing {
+  height: 10px;
+  width: 100%;
+  background-color: $performing; 
+}
+
+.border-art {
+  height: 10px;
+  width: 100%;
+  background-color: $art; 
+}
+
+.concert {
+  border-top: 10px solid $concert !important;
+}
+
+.plenary {
+  border-top: 10px solid $plenary !important;
+}
+
+.other {
+  border-top: 10px solid $other !important;
+}
+
+.performing {
+  border-top: 10px solid $performing !important;
+}
+
+.art {
+  border-top: 10px solid $art !important;
+}
+
+.varbox {
+  border-top: 10px solid $varbox;
+}
+
+
+
+
+.one-up-two-down {
+  .up {
+    height: 220px;
+    width: 100%;
+  }
+  .down {
+    height: 210px;
+    margin-top: 20px;
+  }
+}
+
+.promo-row {
+  margin-top: 20px;
+}
+
+// TOP
+// -------------------
+
+#top-left {
+  background: url(http://i.imgur.com/bRIdD5U.jpg) #101010 top no-repeat;
+  background-size: cover;
+  height: 460px;
+  color: white;
+  border-top: 5px yellow;
+  &:hover {
+    background: $concert;
+  }
+  h1 {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
+    margin-top: 75%;
+    margin-left: 15%;
+  }
+}
+
+#top-right-up {
+  background: url(http://i.imgur.com/FQGzLJk.jpg) #101010 top no-repeat;
+  background-size: cover;
+}
+
+#top-right-up {
+  color: white;
+  &:hover {
+    background: $plenary;
+  }
+  h1 {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
+    margin-left: 2%; 
+  }
+}
+
+#top-right-down1 {
+  background: url(http://i.imgur.com/oWyPJlH.jpg) #101010 top no-repeat;
+  background-size: cover;
+  color: white;
+  &:hover {
+    background: $performing;
+  }
+  h1 {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
+    margin-top: 65%;
+    margin-left: 15%; 
+  }
+}
+
+#top-right-down2 {
+  background-color: #222;
+  color: white;
+  &:hover {
+    background: $other;
+  }
+  h1 {
+    margin-top: 30%;
+    text-align: center;
+  }
+}
+
+// MIDDLE
+// -----------------------
+
+#middle-right {
+  background: url(http://i.imgur.com/QGdffVX.jpg) #101010 top no-repeat;
+  background-size: cover;
+  height: 460px;
+  color: white;
+  border-top: 5px yellow;
+  &:hover {
+    background: $concert;
+  }
+  h1 {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
+    margin-top: 75%;
+    margin-left: 15%;
+  }
+}
+
+#middle-left-up {
+  background: url(http://i.imgur.com/su3Vzbx.jpg) #101010 top no-repeat;
+  background-size: cover;
+}
+
+#middle-left-up {
+  color: white;
+  &:hover {
+    background: $plenary;
+  }
+  h1 {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
+    margin-top: 33%;
+    margin-right: 2%; 
+    text-align: right;
+  }
+}
+
+#middle-left-down1 {
+  background: url(http://i.imgur.com/UQhXEmy.jpg) #101010 top no-repeat;
+  background-size: cover;
+  color: white;
+  &:hover {
+    background: $performing;
+  }
+  h1 {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
+    margin-left: 2%; 
+  }
+}
+
+#middle-left-down2 {
+  background-color: #222;
+  color: white;
+  &:hover {
+    background: $other;
+  }
+  h1 {
+    margin-top: 35%;
+    text-align: center;
+  }
+}
+
+// LOWER
+// -----------------------
+
+#lower-left-up {
+  background: url(http://i.imgur.com/EWk5JU0.jpg) #101010 top no-repeat;
+  background-size: cover;
+}
+
+#lower-left-up {
+  color: white;
+  &:hover {
+    background: $concert;
+  }
+  h1 {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
+    margin-top: 33%;
+    margin-right: 2%; 
+    text-align: right;
+  }
+}
+
+#lower-left-down1 {
+  background-color: #3B5998;
+  color: white;
+  &:hover {
+    background: darken(#3B5998, 20%);
+  }
+  h1 {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
+    text-align: right;
+    font-size: 15em;
+  }
+}
+
+#lower-left-down2 {
+  background-color: #4099FF;
+  color: white;
+  &:hover {
+    background: darken(#4099FF, 20%);
+  }
+  h1 {
+    font-size: 10em;
+    text-align: right;
+    margin-left: 18%;
+    margin-top: 19%;
+  }
+}
+
+
+#lower-right-up {
+  background: url(http://i.imgur.com/jvpTd5h.jpg) #101010 top no-repeat;
+  background-size: cover;
+}
+
+#lower-right-up {
+  color: white;
+  &:hover {
+    background: $plenary;
+  }
+  h1 {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
+    margin-top: 33%;
+    margin-right: 2%; 
+    text-align: right;
+  }
+}
+
+#lower-right-down1 {
+  background: url(http://i.imgur.com/mGXTwq0.jpg) #101010 top no-repeat;
+  background-size: cover;
+  color: white;
+  &:hover {
+    background: $concert;
+  }
+  h1 {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
+    margin-right: 2%; 
+    margin-top: 50%;
+    text-align: right;
+  }
+}
+
+#lower-right-down2 {
+  background: url(http://i.imgur.com/5L5EPcY.jpg) #101010 top no-repeat;
+  background-size: cover;
+  color: white;
+  &:hover {
+    background: $concert;
+  }
+  h1 {
+    margin-top: 25%;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
+    text-align: center;
+  }
+}
