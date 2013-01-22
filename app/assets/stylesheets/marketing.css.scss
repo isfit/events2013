@@ -7,6 +7,8 @@ $plenary: #fbbc3a;
 $other: #222;
 $performing: #0481b9;
 $art: #223366;
+$varbox: hsl(293, 100%, 31%);
+$varbox: #D83415;
 
 .promo-row a:hover {
   text-decoration: none;
@@ -41,6 +43,33 @@ $art: #223366;
   width: 100%;
   background-color: $art; 
 }
+
+.concert {
+  border-top: 10px solid $concert !important;
+}
+
+.plenary {
+  border-top: 10px solid $plenary !important;
+}
+
+.other {
+  border-top: 10px solid $other !important;
+}
+
+.performing {
+  border-top: 10px solid $performing !important;
+}
+
+.art {
+  border-top: 10px solid $art !important;
+}
+
+.varbox {
+  border-top: 10px solid $varbox;
+}
+
+
+
 
 .one-up-two-down {
   .up {
