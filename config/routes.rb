@@ -1,4 +1,7 @@
 Events::Application.routes.draw do
+
+  match "/appsupport" => "events#appsupport"
+
   get "marketing/poster"
 
   get "events/index"
