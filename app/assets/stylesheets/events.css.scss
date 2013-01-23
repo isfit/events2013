@@ -325,6 +325,48 @@ div.event-button.round.disabled {
   height: 92px;
 }
 
+.facebook-button {
+  margin-top: 10px;
+  background-color: #3B5998;
+  width: 287px;
+  height: 50px;
+  color: white;
+  padding: 2%;
+  &:hover {
+    text-decoration: none;
+  }
+  p {
+    line-height: 50px;
+    font-size: 1.5em;
+    padding-left: 7%;
+  }
+  i {
+    padding-right: 5%;
+  }
+ 
+}
+
+.twitter-button {
+  background-color: #4099FF;
+  margin-top: 10px;
+  width: 287px;
+  height: 50px;
+  color: white;
+  padding: 2%;
+ p {
+    line-height: 50px;
+    font-size: 1.5em;
+    padding-left: 5%;
+  }
+}
+
+.no-underline {
+  &:hover {
+    text-decoration: none;
+  }
+ 
+}
+
 
 // @media (min-width: 1200px) {
 //   .offset1 {
