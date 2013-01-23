@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130120154343) do
+ActiveRecord::Schema.define(:version => 20130123142730) do
 
   create_table "event_dates", :force => true do |t|
     t.datetime "datetime"
@@ -103,6 +103,18 @@ ActiveRecord::Schema.define(:version => 20130120154343) do
     t.integer "user_id"
     t.integer "position_id", :null => false
   end
+
+  create_table "speakers", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "event_id"
+    t.text     "embed"
+    t.integer  "box_height"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "speakers", ["event_id"], :name => "index_speakers_on_event_id"
 
   create_table "users", :id => false, :force => true do |t|
     t.integer  "id",                                        :default => 0, :null => false

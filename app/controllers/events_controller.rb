@@ -64,6 +64,10 @@ class EventsController < ApplicationController
     end
   end
 
+  def speakers
+    @speakers = Speaker.joins(:event => :event_dates).order("event_dates.start_at ASC")
+  end
+
   def api
 
     # Gets all eventdates and sorts them based on date and weight

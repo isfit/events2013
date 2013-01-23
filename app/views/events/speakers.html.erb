@@ -1,0 +1,17 @@
+<% @speakers.each do |speaker| %>
+<div class="row promo-row">
+  <div class="span4 plenary speaker" style="height: <%= speaker.box_height %>px;">
+    <h1><%= speaker.name %></h1>
+    <p><%= speaker.description %></p>
+    <div class="event-details">
+      <p><i class="icon-lightbulb"></i> <a href="/2013/<%= speaker.event.event_dates.first.id %>"><%= speaker.event.title %></a></p>
+      <p><i class="icon-calendar"></i> <%= speaker.event.event_dates.first.start_at.strftime("%d %b") %></p>
+      <p><i class="icon-time"></i> <%= speaker.event.event_dates.first.start_at.strftime("%H:%M") %></p>
+    </div>
+  </div>
+  <div class="span8">
+    <%= raw speaker.embed %>
+  </div>
+</div>
+<% end %>
+

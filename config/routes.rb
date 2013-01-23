@@ -5,6 +5,7 @@ Events::Application.routes.draw do
   get "events/show"
   get "events/all" => "events#index"
   get "events/free" => "events#free"
+  get "events/speakers" => "events#speakers"
 
   match 'login' => 'sessions#new'
   match 'logout' => 'sessions#destroy'
