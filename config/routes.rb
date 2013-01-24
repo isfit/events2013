@@ -25,6 +25,7 @@ Events::Application.routes.draw do
       end
     end
     resources :event_places
+    resources :speakers
   end
 
   match '/events/api.:format' => 'events#api'

@@ -1,0 +1,24 @@
+<%= link_to 'New Speaker', new_admin_speaker_path, class: "btn btn-primary" %>
+
+<%= yield %>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Event</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+    </tr>
+  </thead>
+
+  <% @speakers.each do |speaker| %>
+    <tr>
+      <td><%= speaker.name %></td>
+      <td><%= speaker.event.title %></td>
+      <td><%= link_to 'Edit', edit_admin_speaker_path(speaker), class: "btn" %></td>
+      <td><%= link_to 'Destroy', admin_speaker_path(speaker), confirm: 'Are you sure?', method: :delete, class: "btn btn-danger" %></td>
+    </tr>
+  <% end %>
+
+</table>

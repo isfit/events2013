@@ -1,0 +1,34 @@
+<%= link_to "Back to index", {:action=>"index", :controller=>"admin/speakers"} %>
+
+<div class="span12">
+
+<% if flash[:alert] %>
+    <p class="alert alert-error"><%= flash[:alert] %></p>
+<% end %>
+<% if flash[:notice] %>
+  <p class="alert alert-success"><%= flash[:notice] %></p>
+<% end %>
+
+<%= simple_form_for(@speaker, url: @speaker.new_record? ? admin_speaker_path : admin_speaker_path(@speaker.id)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <h2>Event</h2>
+
+    <%= f.select(:event_id, @events.collect {|a| [a.title, a.id]}) -%>
+
+
+    <%= f.input :name, :input_html => {class: "span6"} %>
+    <%= f.input :box_height, :input_html => {class: "span6"} %>
+    <%= f.input :description, :input_html => {class: "span6"} %>
+    <%= f.input :embed, :input_html => {class: "span6"} %>
+
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+    <%= button_to "Cancel", {:action=>"index", :controller=>"admin/speakers"}, :method => 'get' %>
+  </div>
+<% end %>
+</div>
