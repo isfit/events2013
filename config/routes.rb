@@ -30,6 +30,7 @@ Events::Application.routes.draw do
 
   match '/events/api.:format' => 'events#api'
   match '/events/iosapi.:format' => 'events#iosapi'
+  match '/events/androidapi.:format' => 'events#androidapi'
 
   match ":eventtype" => "events#index"
 
