@@ -90,20 +90,21 @@ $varbox: #D83415;
 // -------------------
 
 #top-left {
-  background: url(http://i.imgur.com/bRIdD5U.jpg) #101010 top no-repeat;
+  // background: url(http://i.imgur.com/XpUOBcB.jpg?1) #101010 center no-repeat;
+  background: url(http://i.imgur.com/C3ULcix.jpg) #101010 -8em 0 no-repeat;
   background-size: cover;
   height: 460px;
   color: white;
   border-top: 5px yellow;
   h1 {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
-    margin-top: 75%;
-    margin-left: 15%;
+    margin-top: 85%;
+    margin-left: 27%;
   }
 }
 
 #top-right-up {
-  background: url(http://i.imgur.com/FQGzLJk.jpg) #101010 top no-repeat;
+  background: url(http://events.isfit.org/system/events/images/000/000/061/cover/Det_Andre_Teater_stor.JPG?1359818614) #101010 top no-repeat;
   background-size: cover;
 }
 
@@ -189,15 +190,14 @@ $varbox: #D83415;
 // -----------------------
 
 #lower-left-up {
-  background: url(http://i.imgur.com/EWk5JU0.jpg) #101010 top no-repeat;
-  background-size: cover;
+  background: url(http://i.imgur.com/bRIdD5U.jpg) #101010 center no-repeat;
 }
 
 #lower-left-up {
   color: white;
   h1 {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
-    margin-top: 33%;
+    margin-top: 27%;
     margin-right: 2%; 
     text-align: right;
   }
