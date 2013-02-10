@@ -25,6 +25,7 @@ class EventsController < ApplicationController
   def free
     @events = EventDate.joins(:event).order("start_at ASC")
     @events = @events.where("price_member = 0 AND price_other = 0")
+    @events = @events.where("start_at > '#{6.hours.ago}'")
     @festival_events = @events.where("all_festival = 1")
     @events = @events.where("all_festival = 0 OR all_festival IS NULL")
     render 'index'
@@ -39,6 +40,7 @@ class EventsController < ApplicationController
       @events = @events.where("publish_at < '#{Time.now}'")
     end
 
+    @events = @events.where("start_at > '#{6.hours.ago}'")
     @festival_events = @events.where("all_festival = 1")
     @events = @events.where("all_festival IS NULL OR all_festival = 0")
 
