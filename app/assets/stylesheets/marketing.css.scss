@@ -90,7 +90,7 @@ $varbox: #D83415;
 // -------------------
 
 #top-left {
-  background: url(http://events.isfit.org/system/events/images/000/000/056/cover/danseaften_stor.JPG) #101010 -15em 0 no-repeat;
+  background: url(http://i.imgur.com/GYy9dM0.jpg) #101010 top no-repeat;
   background-size: cover;
   height: 460px;
   color: white;
@@ -103,15 +103,15 @@ $varbox: #D83415;
 }
 
 #top-right-up {
-  background: url(http://events.isfit.org/system/events/images/000/000/061/cover/Det_Andre_Teater_stor.JPG?1359818614) #101010 top no-repeat;
-  background-size: cover;
+  background-color: rgb(250,250,250)
 }
 
 #top-right-up {
-  color: white;
+  color: #222;
+  text-align: center;
   h1 {
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, .75);
-    margin-left: 2%; 
+    line-height: 200px;
+    text-transform: uppercase;
   }
 }
 
@@ -139,7 +139,7 @@ $varbox: #D83415;
 // -----------------------
 
 #middle-right {
-  background: url(http://i.imgur.com/GYy9dM0.jpg) #101010 top no-repeat;
+  background: url(http://events.isfit.org/system/events/images/000/000/021/cover/Skjermbilde_2013-01-20_kl._16.04.11.JPG?1359818596) #101010 top no-repeat;
   background-size: cover;
   height: 460px;
   color: white;
@@ -152,7 +152,7 @@ $varbox: #D83415;
 }
 
 #middle-left-up {
-  background: url(http://events.isfit.org/system/events/image_fronts/000/000/050/cover/m%C3%B8te_social_entrep_liten.JPG) #101010 top no-repeat;
+  background: url(http://events.isfit.org/system/events/image_fronts/000/000/052/cover/m%C3%B8te_peace_liten.JPG) #101010 top no-repeat;
   background-size: cover;
 }
 
