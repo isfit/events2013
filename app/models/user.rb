@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    admin_users = [347, 78, 829, 471, 841, 882, 513, 841, 1037]
+    admin_users = [347, 78, 829, 471, 841, 882, 513, 841, 1037, 1268, 885]
     groups.include?(Group.find(89)) || admin_users.include?(id)
   end
 end
